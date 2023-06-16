@@ -6,7 +6,7 @@ using namespace std;
 #define M 100
 int a[M];
 int n;
-int insert_num(int a[],int &n,int x);
+void insert_num(int a[],int &n,int x);
 void create(int a[],int n);
 void process(int a[],int n);
 int Sequential_search(int a[],int n,int x);
@@ -53,11 +53,29 @@ void process(int a[],int n)
     cout << endl;
 }
 
-int insert_num(int a[],int &n,int x)
+void insert_num(int a[],int &n,int x)
 {
-    n++;
-    a[n-1] = x;
-    sort(a,n);
+    int pos;
+    int i = 0;
+    while(i<n && a[i] < x)
+    {
+        i++;
+    }
+    pos = i;
+    if(pos < n)
+    {
+        n++;
+        for(int j = n-1;j>pos;j--)
+        {
+            a[j] = a[j-1];
+        }
+        a[pos] = x;
+    }
+    else
+    {
+        n++;
+        a[n-1] = x;
+    }
 }
 
 int Sequential_search(int a[],int n,int x)
