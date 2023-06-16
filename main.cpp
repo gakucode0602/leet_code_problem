@@ -116,7 +116,7 @@ void delete_pos(int a[],int &n,int pos)
 
 int find_and_del_all(int a[],int &n,int x)
 {
-    if(Sequential_search(a,n,x)==0) {return 0;}
+    if(Sequential_search(a,n,x)==-1) {return -1;}
     else
     {
         for(int i = 0;i<n;i++)
