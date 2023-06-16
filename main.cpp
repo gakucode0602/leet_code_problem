@@ -28,7 +28,7 @@ int main()
     insert_num(a,n,insert);
     cout << "The list after insert : ";process(a,n);
 
-    int find_sequen;cout << "Input a number you want to find using sequential searcch : ";cin >> find_sequen;
+    int find_sequen;cout << "Input a number you want to find using sequential search : ";cin >> find_sequen;
     if(Sequential_search(a,n,find_sequen)!=-1) cout << "Found the number at : " << Sequential_search(a,n,find_sequen) << " pos" << endl;
     else { cout << "None" << endl; }
 
