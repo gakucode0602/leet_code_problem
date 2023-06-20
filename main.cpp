@@ -16,28 +16,6 @@ void delete_pos(int a[],int &n,int pos);
 void sort(int a[],int n);
 int main()
 {
-    system("cls");
-    srand(time(NULL));
-    
-    cout << "Input the number of element you want to create : ";cin >> n;
-    create(a,n);
-    system("cls");
-    cout << "Here is your list : ";process(a,n);
-
-    int insert;cout << "Input a number you want to add : ";cin >> insert;
-    insert_num(a,n,insert);
-    cout << "The list after insert : ";process(a,n);
-
-    int find_sequen;cout << "Input a number you want to find using sequential search : ";cin >> find_sequen;
-    if(Sequential_search(a,n,find_sequen)!=-1) cout << "Found the number at : " << Sequential_search(a,n,find_sequen) << " pos" << endl;
-    else { cout << "None" << endl; }
-
-    int find_bina;cout << "Insert the number you want to find using binary seach : ";cin >> find_bina;
-    if(binary_search(a,n,find_bina)!=-1) cout << "Found the number at : " << binary_search(a,n,find_bina) << " pos" << endl;
-    else cout << "None" << endl;
-
-    int find_and_del;cout << "Input a number and delete all the element in the list : ";cin >> find_and_del;find_and_del_all(a,n,find_and_del);
-    cout << "Here is your list : ";process(a,n);
     return 0;
 }
 
@@ -116,7 +94,7 @@ void delete_pos(int a[],int &n,int pos)
 
 int find_and_del_all(int a[],int &n,int x)
 {
-    if(Sequential_search(a,n,x)==-1) {return -1;}
+    if(Sequential_search(a,n,x)==0) {return 0;}
     else
     {
         for(int i = 0;i<n;i++)
